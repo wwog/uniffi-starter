@@ -1,0 +1,22 @@
+[package]
+name = "starter-uniffi"
+description = "UniFFI adapter: exposes `starter-core` to Kotlin, Swift, Python, Ruby."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+# `cdylib` is what UniFFI's `generate --library` reads (dynamic lib for
+# desktop/Android). `staticlib` is what iOS consumes. Keep `lib` too so the
+# crate can still be used as a normal Rust dependency and from tests.
+crate-type = ["lib", "cdylib", "staticlib"]
+# The FFI library name (minus the `lib` prefix / extension) is what shows up in
+# generated bindings. Explicit so it is stable across platforms.
+name = "starter"
+
+[dependencies]
+starter-core = { path = "../core" }
+uniffi.workspace = true
+thiserror.workspace = true

@@ -1,0 +1,11 @@
+[package]
+name = "starter-core"
+description = "Pure Rust domain logic. No UniFFI dependency — reusable and testable on its own."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+thiserror.workspace = true

@@ -1,0 +1,16 @@
+[package]
+name = "uniffi-bindgen"
+description = "Standalone CLI to generate Kotlin/Swift/Python/Ruby bindings for the workspace."
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "uniffi-bindgen"
+path = "src/main.rs"
+
+[dependencies]
+# `cli` pulls in the bindgen machinery + clap so this binary is a drop-in
+# replacement for the published `uniffi-bindgen` CLI. Version must match the
+# `uniffi` used by `starter-uniffi`.
+uniffi = { workspace = true, features = ["cli"] }

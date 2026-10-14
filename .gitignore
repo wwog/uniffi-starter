@@ -1,0 +1,17 @@
+# Rust
+/target
+**/*.rs.bk
+Cargo.lock
+
+# Generated bindings & build artifacts
+/bindings/
+/artifacts/
+*.xcframework/
+*.aar
+*.jar
+
+# IDE / editor
+.idea/
+.vscode/
+*.iml
+.DS_Store
